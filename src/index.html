@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta name="color-scheme" content="dark light" />
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<title>Labore est esse dolore id</title>
+		<meta name="description" content="">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" type="text/css" href="neat.css">
+		<link rel="stylesheet" type="text/css" href="custom.css">
+		<script type="module">
+			import { WebR } from 'https://webr.r-wasm.org/latest/webr.mjs'
+			import * as Plot from "https://cdn.jsdelivr.net/npm/@observablehq/plot@0.6/+esm";
+
+			globalThis.webR = new WebR();
+			await globalThis.webR.init();
+			export const webR = globalThis.webR;
+			document.getElementById("isolated").textContent = crossOriginIsolated ? '🟢' : '🌕'
+			document.getElementById("msg").textContent = await webR.evalRString(`R.version.string`)
+
+			const plotDiv = document.getElementById("plot")
+
+			const plt = Plot.plot({
+				style: {
+					backgroundColor: "#471337",
+					height: "150px",
+					width: "300px"
+				},
+				axis: null,
+				marks: [
+					Plot.text(
+						[ "Hello, world" ], 
+						{ 
+							x: 1, y: 1, 
+							fill: "#ff9248", 
+							fontSize: "60pt", 
+							title: d => d 
+						}
+					)
+				]
+			})
+
+			plt.classList.add("center")
+
+			plotDiv.replaceChildren(plt)
+
+		</script>
+	</head>
+	<body>
+		<h1>Labore est esse dolore id</h1>
+
+		<p id="status"><span id="isolated">&nbsp;</span><span id="msg"></span></p>
+		
+		<h2>Eu velit id elit duis Lorem non aliquip commodo</h2>
+
+		<p>Quis aliqua nisi cillum in adipisicing ad. Irure elit mollit ad labore exercitation incididunt labore aliquip commodo. Velit ut ut nulla reprehenderit cupidatat ex veniam exercitation. Ex irure in dolore eiusmod tempor ex. Do nulla quis nulla nulla velit.</p>
+
+		<div id="plot" class="center"></div>
+
+    <p>Quis cupidatat ullamco laboris est nostrud elit. Magna ex dolor ipsum sunt aliquip culpa. Duis sunt consequat dolor et deserunt est elit anim. Sit dolor cupidatat ipsum anim minim. Ea consequat dolore nisi do amet aliqua pariatur minim mollit.</p>
+
+    <p>Proident in adipisicing cillum est. Proident eu quis anim in eiusmod proident nostrud mollit. Nulla veniam eiusmod officia amet ut et deserunt culpa est Lorem minim. Anim sint incididunt minim laborum mollit cupidatat Lorem est qui.</p>
+
+		<h2>Cupidatat nulla nisi veniam ex sunt sit</h2>
+
+    <p>Quis et sint exercitation et aliquip sunt deserunt occaecat culpa magna minim aliquip eiusmod. Voluptate dolor anim ex esse consequat fugiat tempor deserunt eu exercitation aliqua. Ad sint minim ullamco id culpa qui fugiat nulla deserunt. Ullamco consectetur consectetur sunt tempor. Velit anim magna quis id anim ad dolor aliquip amet culpa ex cupidatat velit mollit. Ipsum quis ex cupidatat incididunt aliqua voluptate dolor consequat in. Anim sint Lorem duis reprehenderit mollit dolor fugiat irure deserunt.</p>
+
+		<h3>Proident laboris</h3>
+
+<div class="row">
+	<div class="column">Magna fugiat do minim laboris. Sint ad quis voluptate mollit cupidatat cillum enim sunt ut qui culpa adipisicing id eu. Enim consequat incididunt magna officia non irure. Voluptate tempor ea voluptate do esse proident est in minim sint veniam. Incididunt culpa adipisicing nisi minim ad. Aliqua reprehenderit nisi magna velit ea excepteur sit occaecat commodo consectetur dolore.</div>
+	<div class="column">Enim ut cupidatat fugiat in in occaecat consectetur officia minim nostrud. Ipsum ad irure culpa voluptate id proident. Consectetur qui do esse laborum est. Officia Lorem aliquip consectetur aliquip duis est nulla et cillum labore ullamco occaecat ut. Adipisicing incididunt deserunt adipisicing ex reprehenderit cillum consectetur. Proident tempor esse ullamco proident irure laborum duis tempor. Veniam nostrud irure occaecat cillum proident magna nostrud in voluptate do aliquip.</div>
+	<div class="column">Sint id ut anim cupidatat ut commodo fugiat officia occaecat. Exercitation quis quis Lorem enim consequat quis nulla duis non est ad tempor. Occaecat laborum sint adipisicing adipisicing culpa cillum occaecat amet excepteur do Lorem. Aute esse esse eu consectetur Lorem aliquip aliquip aliquip amet est deserunt. Culpa laboris irure sit incididunt sunt ullamco fugiat. Aliqua duis sint fugiat id. Sint fugiat incididunt id nostrud.</div>
+</div>
+
+<p>Est cillum cillum voluptate elit labore ea. Aute cillum dolor quis proident aliqua labore velit exercitation ipsum. Dolore officia esse minim labore aliqua. Anim veniam cillum est duis veniam do proident elit fugiat. Eu velit nulla ipsum velit laboris reprehenderit magna sunt ea quis minim eu labore enim. Anim veniam dolor laborum elit excepteur deserunt minim fugiat.</p>
+
+	<script src="" async defer></script>
+	</body>
+</html>
