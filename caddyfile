@@ -1,0 +1,11 @@
+localhost:8080 {
+
+  root * src
+
+  file_server
+
+	header Cross-Origin-Embedder-Policy require-corp
+	header Cross-Origin-Opener-Policy same-origin
+	header Cross-Origin-Resource-Policy cross-origin
+
+}

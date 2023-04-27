@@ -31,7 +31,12 @@ html, button, input {
 	font-family: var(--font-mono)
 }
 
-#plot {
+#plot1 {
 	height: 150px;
-	min-height: 150px;
+}
+
+#plot2 {
+	padding:20px;
+	background-color: #471337;
+	height: 600px;
 }
