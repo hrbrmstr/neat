@@ -1,0 +1,76 @@
+{
+	"apps": {
+		"http": {
+			"servers": {
+				"srv0": {
+					"listen": [
+						":8080"
+					],
+					"routes": [
+						{
+							"handle": [
+								{
+									"handler": "subroute",
+									"routes": [
+										{
+											"handle": [
+												{
+													"handler": "vars",
+													"root": "src"
+												},
+												{
+													"handler": "headers",
+													"response": {
+														"set": {
+															"Cross-Origin-Embedder-Policy": [
+																"require-corp"
+															]
+														}
+													}
+												},
+												{
+													"handler": "headers",
+													"response": {
+														"set": {
+															"Cross-Origin-Opener-Policy": [
+																"same-origin"
+															]
+														}
+													}
+												},
+												{
+													"handler": "headers",
+													"response": {
+														"set": {
+															"Cross-Origin-Resource-Policy": [
+																"cross-origin"
+															]
+														}
+													}
+												},
+												{
+													"handler": "file_server",
+													"hide": [
+														"./Caddyfile"
+													]
+												}
+											]
+										}
+									]
+								}
+							],
+							"match": [
+								{
+									"host": [
+										"localhost"
+									]
+								}
+							],
+							"terminal": true
+						}
+					]
+				}
+			}
+		}
+	}
+}
